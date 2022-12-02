@@ -35,8 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0)
+console.log(`Problem 1: ${summedPrice}`)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,7 +55,12 @@ const cart = [
 
 //CODE HERE
 
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    const totalWithTax = cartTotal * (1 + tax)
+    return totalWithTax - couponValue
+}
 
+console.log(`Problem 2: ${calcFinalPrice(100, 20, .07)}`)
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -80,6 +85,19 @@ const cart = [
 /*
     TEXT ANSWER HERE
 
+    My customer object will have :
+    - Name
+    - Address
+    - Email
+    - Current Balance
+
+    In my customer object, I am planning out a customer of a service business (Electrician, Landscaper, Plumber).  In those businesses, 
+    the company will need: 
+    - To keep track of customers by name
+    - Have a billing address
+    - An email for correspondence and emailing invoices and receipts
+    - A current balance to know how much each customer owes
+
 */
 
 /*
@@ -88,3 +106,15 @@ const cart = [
 */
 
 //CODE HERE
+
+const johnSmith = {
+    name: "John Smith",
+    address: "123 Example Ln",
+    email: "jsmith@gmail.com",
+    currentBalance: 4567.89
+}
+
+console.log(`Problem 3 name: ${johnSmith.name}`)
+console.log(`Problem 3 address: ${johnSmith.address}`)
+console.log(`Problem 3 email: ${johnSmith.email}`)
+console.log(`Problem 3 currentBalance: ${johnSmith.currentBalance}`)
