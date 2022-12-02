@@ -23,8 +23,8 @@
 
 //CODE HERE
 
-
-
+const greetUser = username => `Welcome back, ${username}`
+console.log(`Problem 1: ${greetUser("Andrew")}`)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -51,7 +51,10 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
+const canWeDeliver = zipCode => deliveryAreaZipCodes.includes(zipCode) ? "You're in our delivery zone!" : "Sorry, we can't deliver to that address"
 
+console.log(`Problem 2 Part 1 Test(includes zipCode): ${canWeDeliver(85205)}`)
+console.log(`Problem 2 Part 1 Test(does NOT include zipCode): ${canWeDeliver(12345)}`)
 
 /* 
     Problem 2 Continued
@@ -72,6 +75,20 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 // CODE HERE
 
+const canWeDeliverTwo = zipCode => {
+   
+    let doesInclude = false
+   
+    deliveryAreaZipCodes.forEach(value => {
+        if (value === zipCode) {
+            doesInclude = true
+        }
+    })
+    return doesInclude ? "You're in our delivery zone!" : "Sorry, we can't deliver to that address"
+}
+
+console.log(`Problem 2 Part 2 Test(includes zipCode): ${canWeDeliverTwo(85205)}`)
+console.log(`Problem 2 Part 2 Test(does NOT include zipCode): ${canWeDeliverTwo(12345)}`)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -108,7 +125,8 @@ const deals = [
 
 //CODE HERE
 
-
+deals[0].title = deals[0].title.replace("15", "10")
+console.log(`Problem 3 Part 1: ${deals[0].title}`)
 
 /*
     The restaurant is going to continue its
@@ -124,3 +142,7 @@ const deals = [
 */
 
 //CODE HERE
+
+deals[1].desc = deals[1].desc.trim()
+deals[1].desc = deals[1].desc.replace("March", "April")
+console.log(`Problem 3 Part 2: ${deals[1].desc}`)
