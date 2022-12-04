@@ -32,7 +32,15 @@
 
 //CODE HERE
 
-
+const pizza = {
+    name: "Pepperoni", 
+    price: 10.99, 
+    category: "entree", 
+    popularity: 10, 
+    rating: 9.2, 
+    tags: ["kids", "basic", "hot-n-ready"]
+}
+console.log("Problem 1:", pizza)
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -43,7 +51,7 @@
 */
 
 //CODE HERE
-
+    console.log(`Problem 2 Part 1: ${pizza.popularity}`)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +61,7 @@
 */
 
 //CODE HERE
-
+console.log(`Problem 2 Part 2: ${pizza.tags[1]}`)
 
 /*
     Third, destructure the price off of the
@@ -63,7 +71,8 @@
 */
 
 //CODE HERE
-
+const {price} = pizza
+console.log(`Problem 2 Part 3: ${price}`)
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +82,8 @@
 */
 
 //CODE HERE
-
+const {category} = pizza
+console.log(`Problem 2 Part 4: ${category}`)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,8 +98,49 @@
 */
 
 //CODE HERE
-
-
+let foodArr = [
+    {
+        name: "Pepperoni", 
+        price: 10.99, 
+        category: "entree", 
+        popularity: 10, 
+        rating: 9.2, 
+        tags: ["kids", "basic", "hot-n-ready"]
+    },
+    {
+        name: "Cheese", 
+        price: 8.99, 
+        category: "entree", 
+        popularity: 8, 
+        rating: 6.5, 
+        tags: ["kids", "basic", "hot-n-ready"]
+    },
+    {
+        name: "Meat-Lover's", 
+        price: 12.99, 
+        category: "entree", 
+        popularity: 9, 
+        rating: 9.5, 
+        tags: ["special", "customizable", "cook-to-order"]
+    },
+    {
+        name: "Hot-Wings", 
+        price: 6.99, 
+        category: "appetizer", 
+        popularity: 8, 
+        rating: 8.3, 
+        tags: ["side", "spicy", "chicken", "cook-to-order"]
+    },
+    {
+        name: "Cheese-Sticks", 
+        price: 6.99, 
+        category: "appetizer", 
+        popularity: 10, 
+        rating: 9.9, 
+        tags: ["side", "basic", "hot-n-ready"]
+    }
+]
+console.log("Problem 3:", foodArr)
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -105,7 +156,8 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(value => value.tags.includes("hot-n-ready"))
+console.log("Problem 4:", filteredFood)
 
 
 
@@ -149,6 +201,13 @@
 */
 
 //CODE HERE
+function filterByProperty(property, number, type) {
+    if (type === "above") {
+        return foodArr.filter(value => value[property] > number)
+    } else {
+        return foodArr.filter(value => value[property] < number) 
+    }
+}
 
 
 /*
@@ -159,3 +218,10 @@
 */
 
 //CODE HERE
+console.log("Below are tests for Problem 5:")
+console.log("Testing Rating at above 8")
+console.log(filterByProperty("rating", 8, "above"))
+console.log("Testing Popularity at below 9")
+console.log(filterByProperty("popularity", 9, "below"))
+console.log("Testing Price at below 8")
+console.log(filterByProperty("price", 8, "below"))
