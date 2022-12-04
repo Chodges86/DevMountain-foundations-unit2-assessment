@@ -52,6 +52,7 @@ const empOne = new Employee("Jess", "weekday mornings, weekday afternoons")
 */
 
 //CODE HERE
+console.log("Problem 1 Part 2:")
 empOne.getSchedule()
 
 /*
@@ -71,6 +72,7 @@ empOne.getSchedule()
 const empTwo = {...empOne}
 empTwo.name = "Nick"
 
+console.log("Problem 1 Part 3:")
 console.log({empOne})
 console.log({empTwo})
 
@@ -136,7 +138,7 @@ const manager = new Manager("Winston", "weekday mornings, weekday afternoons", [
 */
 
 //CODE HERE
-
+console.log("Problem 3 Part 2:")
 manager.getEmployees()
 
 /*
@@ -146,7 +148,6 @@ manager.getEmployees()
 */
 
 //CODE HERE 
-
 manager.addEmployee("Coach")
 
 /*
@@ -156,5 +157,5 @@ manager.addEmployee("Coach")
 */
 
 //CODE HERE
-
+console.log("Problem 3 Part 4:")
 manager.getEmployees()
